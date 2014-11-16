@@ -24,7 +24,7 @@ head(rawdata)
 
 
 ```r
-#  undone   1. Make a histogram of the total number of steps taken each day
+# 1. Make a histogram of the total number of steps taken each day
 library(dplyr)
 rawdata <- tbl_df(rawdata)
 stepsSum <- summarize(
@@ -64,7 +64,6 @@ head(StepsMeanAndMedian)
 
 ```r
 # 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-# done
 stepsInterval <- summarize(
     group_by(rawdata, interval), 
     stepsIntervalMean = mean(steps, na.rm=T)
@@ -79,7 +78,6 @@ with(stepsInterval,
 
 ```r
 # 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
-# done
 stepsInterval[
     which.max(
         stepsInterval$stepsIntervalMean
@@ -101,7 +99,7 @@ stepsInterval[
 
 
 ```r
-##   1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+#  1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 sum(is.na(rawdata))
 ```
 
